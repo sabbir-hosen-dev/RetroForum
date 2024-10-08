@@ -1,103 +1,186 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Retro Forum</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Retro Forum</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
 
-<link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
-<script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-<link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          primary: "#797DFC",
-          gray: " #12132d99",
-          hover:"#797dfc1a",
-          text:"#12132D",
-          text2: "#ffffffcc",
-          green: "#10B981"
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#797DFC",
+              gray: " #12132d99",
+              hover: "#797dfc1a",
+              text: "#12132D",
+              text2: "#ffffffcc",
+              green: "#10B981",
+            },
+            fontFamily: {
+              mulish: ["Mulish", "sons-serif"],
+              inter: ["Inter", "sans-serif"],
+            },
+          },
         },
-        fontFamily : {
-          mulish : ["Mulish", 'sons-serif'],
-          inter : ["Inter", "sans-serif"]
+      };
+    </script>
+
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .wrap {
+          @apply container m-auto px-5 max-w-[950px];
+        }
+        .p-btn {
+          @apply cursor-pointer px-5 py-2 rounded-full font-bold hover:bg-hover transition duration-300 hover:text-text   bg-primary text-white;
         }
       }
-    }
-  }
-</script>
-
-<style type="text/tailwindcss">
-  @layer utilities {
-    .wrap{
-      @apply container m-auto px-5 max-w-[950px];
-    }
-    .p-btn{
-      @apply cursor-pointer px-5 py-2 rounded-full font-bold hover:bg-hover transition duration-300 hover:text-text   bg-primary text-white;
-    }
-  }
-</style>
-<link rel="stylesheet" href="style.css">
-</head>
-<body class="text-inter">
-
-  <header class="wrap">
-    <nav class="flex justify-between items-center py-3">
-      <div class="logo"><h2 class="font-extrabold font-mulish text-3xl ">ReTro</h2></div>
-      <div class="icons">
-
-      </div>
-      <div class="nav-btns">
-        <div class="flex gap-4 items-center">
-          <i class="fa-solid fa-house border-[1px] rounded-full p-2 cursor-pointer "></i>
-          <i class="fa-solid fa-pen border-[1px] rounded-full p-2 cursor-pointer"></i>
-          <i class="fa-solid fa-user border-[1px] rounded-full p-2 cursor-pointer"></i>
-          <i class="fa-solid fa-flag border-[1px] rounded-full p-2 cursor-pointer"></i>
-          <button class="p-btn">Sig In</button>
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="text-inter">
+    <header class="wrap">
+      <nav class="flex justify-between items-center py-3">
+        <div class="logo">
+          <h2 class="font-extrabold font-mulish text-3xl">ReTro</h2>
         </div>
-
-      </div>
-    </nav>
-  </header>
-
-  <main>
-    <section class="wrap ">
-      <div class=" banner  rounded-xl mt-5 mb-5 grid grid-cols-3 gap-5 py-20 p-10">
-        <div class="content col-span-3 md:col-span-2">
-            <h1 class="text-white font-extrabold text-5xl mb-2" >Welcome to the <br> <span>Tetro Forum</span> </h1>
-            <p class="text-text2 my-5">Share your favorite opinion and win and wp forum coffee mug!</p>
-
-          <div class="relative">
-            <input class="input w-full  font-[500] rounded-full pr-24" type="text" placeholder="Search here anything">
-            <button class="p-btn absolute right-[6px] top-1">Search</button>
+        <div class="icons"></div>
+        <div class="nav-btns">
+          <div class="flex gap-4 items-center">
+            <i
+              class="fa-solid fa-house border-[1px] rounded-full p-2 cursor-pointer"
+            ></i>
+            <i
+              class="fa-solid fa-pen border-[1px] rounded-full p-2 cursor-pointer"
+            ></i>
+            <i
+              class="fa-solid fa-user border-[1px] rounded-full p-2 cursor-pointer"
+            ></i>
+            <i
+              class="fa-solid fa-flag border-[1px] rounded-full p-2 cursor-pointer"
+            ></i>
+            <button class="p-btn">Sig In</button>
           </div>
         </div>
-        <div class="bg-white rounded-lg p-6 col-span-3 md:col-span-1 flex flex-col justify-center gap-5">
-          <div class="flex justify-between"><p>Registred Users</p> <p>01</p></div>
-          <div class="flex justify-between"><p>Forum</p> <p>01</p></div>
-          <div class="flex justify-between"><p>Topics</p> <p>01</p></div>
-          <div class="flex justify-between"><p>Teplies</p> <p>01</p></div>
-        </div>
-      </div>
-    </section>
-  </main>
+      </nav>
+    </header>
 
-  <footer></footer>
-  
-  <!-- script  -->
-   <script src="js/custom.js"></script>
-   <script src="js/function.js"></script>
-</body>
+    <main>
+      <section class="wrap">
+        <div
+          class="banner rounded-xl mt-5 mb-5 grid grid-cols-3 gap-5 py-20 p-10"
+        >
+          <div class="content col-span-3 md:col-span-2">
+            <h1 class="text-white font-extrabold text-5xl text-mulish mb-2">
+              Welcome to the <br />
+              <span>Tetro Forum</span>
+            </h1>
+            <p class="text-text2 my-5">
+              Share your favorite opinion and win and wp forum coffee mug!
+            </p>
+
+            <div class="relative">
+              <input
+                class="input w-full font-[500] rounded-full pr-24"
+                type="text"
+                placeholder="Search here anything"
+              />
+              <button class="p-btn absolute right-[6px] top-1">Search</button>
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-lg p-6 col-span-3 md:col-span-1 flex flex-col justify-center gap-5"
+          >
+            <div class="flex justify-between">
+              <p>Registred Users</p>
+              <p>01</p>
+            </div>
+            <div class="flex justify-between">
+              <p>Forum</p>
+              <p>01</p>
+            </div>
+            <div class="flex justify-between">
+              <p>Topics</p>
+              <p>01</p>
+            </div>
+            <div class="flex justify-between">
+              <p>Teplies</p>
+              <p>01</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="text-center flex justify-center py-5 items-center flex-col">
+          <h2 class="text-text font-bold text-3xl text-mulish">
+            Let's Discuss
+          </h2>
+          <p class="max-w-[600px] text-center m-auto mt-2">
+            Yes, you can run unit tests and view the results directly within the
+            app. The integrated testing features allow for a streamlined .
+          </p>
+        </div>
+
+        <div class="content grid grid-cols-12 gap-20">
+          <div id="content" class="col-span-8">
+            <div class="rounded-xl flex gap-5">
+              <div class="">
+                <img src="" alt="" />
+              </div>
+              <div class="">
+                <div class="flex gap-2">
+                  <p># Music</p>
+                  <p>Authoe: Awload HOssing</p>
+                </div>
+                <h4>10 kids Unaware of Halloween Costume</h4>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Molestias, quas.
+                </p>
+                <div class="flex"></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="detels" class="col-span-4 rounded-xl">
+
+            <div class="h-[200px]"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer></footer>
+
+    <!-- script  -->
+    <script src="js/custom.js"></script>
+    <script src="js/function.js"></script>
+  </body>
 </html>
