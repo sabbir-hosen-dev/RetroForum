@@ -1,5 +1,4 @@
 const contentShow = (data) => {
-  console.log(data);
   const {
     image,
     title,
@@ -9,6 +8,7 @@ const contentShow = (data) => {
     comment_count,
     view_count,
     posted_time,
+    id,
   } = data;
   const contentDiv = document.getElementById("content");
   const div = document.createElement("div");
@@ -54,8 +54,10 @@ const contentShow = (data) => {
                   </div>
 
 
-                  <div class="">
-                    <i class="fa-solid text-[12px] fa-envelope text-white bg-green-400 rounded-full p-1"></i>
+                 <div class="some-class" onclick='handleRead(${JSON.stringify(
+                   data
+                 )})'>
+                    <i  class="fa-solid text-[12px] cursor-pointer fa-envelope text-white bg-green-400 rounded-full p-1"></i>
                   </div>
                 </div>
               </div>
@@ -64,13 +66,9 @@ const contentShow = (data) => {
   contentDiv.appendChild(div);
 };
 
-
-
-
 const postShow = (data) => {
-
-  const {cover_image,author,title,profile_image,description} = data;
-  const {name,posted_date} = author;
+  const { cover_image, author, title, profile_image, description } = data;
+  const { name, posted_date } = author;
 
   const pContainer = document.getElementById("letest-posts");
   const div = document.createElement("div");
@@ -100,5 +98,39 @@ const postShow = (data) => {
           </div>
   `;
 
-  pContainer.append(div)
-}
+  pContainer.append(div);
+};
+
+const readData = [];
+
+const upgrateCountRead = () => {
+  const readCount = document.getElementById("readCount");
+  readCount.innerText = readData.length;
+};
+
+const addReadItem = () => {
+  const itemContiner = document.getElementById("readContainer");
+  const div = document.createElement("div");
+  readData &&
+    readData.map((data) => {
+
+      div.innerHTML = `
+                    <div class="bg-white p-2 rounded-md mt-4 flex justify-between">
+                 
+                <small class="font-semibold">${data.title}</small>
+
+                <div class="flex gap-1 items-center">
+                  <i class="fa-regular fa-eye"></i>
+                  <small class="font-semibold">${data.view_count}</small>
+                </div>
+              </div>
+    `;
+
+    });
+    itemContiner.appendChild(div)
+};
+const handleRead = (data) => {
+  readData.push(data);
+  upgrateCountRead();
+  addReadItem();
+};
