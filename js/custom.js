@@ -134,3 +134,19 @@ const handleRead = (data) => {
   upgrateCountRead();
   addReadItem();
 };
+
+
+const btn = document.getElementById("serch");
+const form = document.getElementById("s-input");
+
+btn.addEventListener("click" , () => {
+  if(form.value == ""){
+    alert("Please input value")
+  }
+
+  searchCatagory(form.value);
+
+  form.value = " "
+
+})
+
