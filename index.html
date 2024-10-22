@@ -41,7 +41,6 @@
               hover: "#797dfc1a",
               text: "#12132D",
               text2: "#ffffffcc",
-              green: "#10B981",
             },
             fontFamily: {
               mulish: ["Mulish", "sons-serif"],
@@ -137,7 +136,7 @@
         </div>
       </section>
 
-      <section>
+      <section class="wrap m-auto">
         <div class="text-center flex justify-center py-5 items-center flex-col">
           <h2 class="text-text font-bold text-3xl text-mulish">
             Let's Discuss
@@ -148,36 +147,83 @@
           </p>
         </div>
 
-        <div class="content grid grid-cols-12 gap-20">
-          <div id="content" class="col-span-8">
-            <div class="rounded-xl flex gap-5">
-              <div class="">
-                <img src="" alt="" />
+        <div class="content grid grid-cols-12 gap-5 mt-5">
+          <div
+            id="content"
+            class="col-span-12 md:col-span-8"
+          ></div>
+
+          <div id="detels" class="md:col-span-4 col-span-12 ">
+            <div class="bg-[#F3F3F5] rounded-xl p-5">
+              <div class="flex justify-between items-center">
+                <h4 class="font-bold text-xl">Title</h4>
+                <div class="text-gray">Mark as Read (4)</div>
               </div>
-              <div class="">
-                <div class="flex gap-2">
-                  <p># Music</p>
-                  <p>Authoe: Awload HOssing</p>
+
+              <div class="bg-white p-2 rounded-md mt-3 flex justify-between">
+                 
+                <small class="font-semibold">Lorem ipsum dolor sit amet.</small>
+
+                <div class="flex gap-1 items-center">
+                  <i class="fa-regular fa-eye"></i>
+                  <small class="font-semibold">1000</small>
                 </div>
-                <h4>10 kids Unaware of Halloween Costume</h4>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Molestias, quas.
-                </p>
-                <div class="flex"></div>
               </div>
+
             </div>
-          </div>
-
-          <div id="detels" class="col-span-4 rounded-xl">
-
-            <div class="h-[200px]"></div>
           </div>
         </div>
       </section>
+
+      <!-- section join forem -->
+      <section class="wrap m-auto"> 
+        <div class="bg-[#12132D]  gap-10 my-10 rounded-3xl grid grid-cols-3 p-12 text-white items-center md:gap-3">
+          <div class="md:col-span-2 col-span-3">
+            <h2 class="font-bold text-white text-2xl py-2 ">Join Our Forum</h2>
+            <p>Share your favorite opinion and win and wp forum coffee mug! Yes, you can run unit tests and view the results directly within the app. </p>
+
+          <button class="btn text-white font-bold rounded-3xl border-none mt-5 bg-[#797DFC]">Registered Now</button>
+          </div>
+          <div class="col-span-3 md:col-span-1">
+            <img src="./images//joinforum.png" alt="">
+          </div>
+        </div>
+      </section>
+
+      <!-- --section latest Post --  -->
+
+      <section class="wrap m-auto">
+        <div
+          class="text-center flex justify-center my-10 items-center flex-col"
+        >
+          <h2 class="text-text font-bold text-3xl text-mulish">Latest Posts</h2>
+          <p class="max-w-[600px] text-center m-auto mt-2">
+            Yes, you can run unit tests and view the results directly within the
+            app. The integrated testing features allow for a streamlined .
+          </p>
+        </div>
+
+        <div
+          id="letest-posts"
+          class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5"
+        ></div>
+      </section>
     </main>
 
-    <footer></footer>
+    <!-- <footer class="bg-[#12132d0d] text-gray">
+      <div class="flex justify-center items-center flex-col gap-3 py-14 ">
+        <h4c class="font-extrabold font-mulish text-3xl text-black">ReTro</h4c>
+        <p class="max-w-[600px] m-auto text-center">
+          Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC
+        </p>
+
+
+        <div class="wrap m-aut0 my-5 mt-10 ">
+          <div class="border-b mt-5 border-gray   "></div>
+        </div>
+        <p class="text-center my-5">2017, All Rights Reserved.</p>
+      </div>
+    </footer> -->
 
     <!-- script  -->
     <script src="js/custom.js"></script>
